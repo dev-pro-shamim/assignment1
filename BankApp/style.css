@@ -1,0 +1,37 @@
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 400px;
+    border: 1px solid #8ad428;
+    background-color: #ecd0d0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(219, 68, 68, 0.1);
+
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.container div {
+    margin-bottom: 10px;
+}
+
+.container label {
+    display: inline-block;
+    width: 100px;
+}
+
+.container input[type="text"],
+.container input[type="number"] {
+    width: 200px;
+}
+
+.container button {
+    padding: 5px 10px;
+    margin-right: 10px;
+}
+
+#output {
+    margin-top: 10px;
+}

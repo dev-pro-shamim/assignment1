@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Calculator</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-color: #f8f9fa;
+      padding-top: 50px;
+    }
+    .calculator {
+      max-width: 400px;
+      margin: auto;
+      background-color: #ecd0d0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="calculator">
+    <input type="text" id="display" class="form-control mb-3" readonly>
+    <div class="row">
+      <div class="col-3"><button class="btn btn-secondary" onclick="appendToDisplay('7')">7</button></div>
+      <div class="col-3"><button class="btn btn-secondary" onclick="appendToDisplay('8')">8</button></div>
+      <div class="col-3"><button class="btn btn-secondary" onclick="appendToDisplay('9')">9</button></div>
+      <div class="col-3"><button class="btn btn-warning" onclick="appendToDisplay('/')">/</button></div>
+    </div>
+    <div class="row">
+      <div class="col-3"><button class="btn btn-secondary" onclick="appendToDisplay('4')">4</button></div>
+      <div class="col-3"><button class="btn btn-secondary" onclick="appendToDisplay('5')">5</button></div>
+      <div class="col-3"><button class="btn btn-secondary" onclick="appendToDisplay('6')">6</button></div>
+      <div class="col-3"><button class="btn btn-warning" onclick="appendToDisplay('*')">*</button></div>
+    </div>
+    <div class="row">
+      <div class="col-3"><button class="btn btn-secondary" onclick="appendToDisplay('1')">1</button></div>
+      <div class="col-3"><button class="btn btn-secondary" onclick="appendToDisplay('2')">2</button></div>
+      <div class="col-3"><button class="btn btn-secondary" onclick="appendToDisplay('3')">3</button></div>
+      <div class="col-3"><button class="btn btn-warning" onclick="appendToDisplay('-')">-</button></div>
+    </div>
+    <div class="row">
+      <div class="col-3"><button class="btn btn-secondary" onclick="appendToDisplay('0')">0</button></div>
+      <div class="col-3"><button class="btn btn-secondary" onclick="appendToDisplay('.')">.</button></div>
+      <div class="col-3"><button class="btn btn-warning" onclick="clearDisplay()">C</button></div>
+      <div class="col-3"><button class="btn btn-warning" onclick="appendToDisplay('+')">+</button></div>
+    </div>
+    <div class="row">
+      <div class="col-6"><button class="btn btn-primary" onclick="calculate()">=</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Custom JavaScript -->
+<script>
+  function appendToDisplay(value) {
+    document.getElementById('display').value += value;
+  }
+
+  function clearDisplay() {
+    document.getElementById('display').value = '';
+  }
+
+  function calculate() {
+    try {
+      var result = eval(document.getElementById('display').value);
+      document.getElementById('display').value = result;
+    } catch (error) {
+      document.getElementById('display').value = 'Error';
+    }
+  }
+</script>
+</body>
+</html>
